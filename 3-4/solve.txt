@@ -1,0 +1,19 @@
+# http://natas3.natas.labs.overthewire.org/
+when you index your site you need to specify which end points u want bots to crawl and which end point you dont want them to crawl, so each site should have robots.txt
+
+for example https://digikala.com/robots.txt is something like this:
+user-agent: *
+disallow: /profile/*
+disallow: /cart/*
+disallow: /waiting/*
+disallow: /checkout/*
+disallow: /addcomment/*
+disallow: /compare/*
+disallow: /imagecompare/*
+disallow: /invalidrequest
+disallow: /user/*
+
+in this level comments (in HTMLs) it says "not even google will find it this time" which is a hint for us,
+when you check http://natas3.natas.labs.overthewire.org/robots.txt, you find a directory forbided for bots,
+called /s3cr3t/ which is leet form for 'secret' (an absolutly sus endpoint), there in /se3cr3t/ you can find users.txt
+
