@@ -1,0 +1,12 @@
+# http://natas2.natas.labs.overthewire.org/
+
+when you inspect this page there is 1pixel image with this source => 'files/pixel.ong'
+
+if you check "directory listing" or "directory traversal" vulnerability, its a webserver miss-configuration,
+you can access the directories by deleting file name in URL, http://natas2.natas.labs.overthewire.org/files/
+
+
+however if we hasnt a clue like the pixel.png here, we could use skipfish in kali like:
+skipfish -o ./my_dir -A username:password url
+where my_dir is a empty dir and username and password is authentication for this page and url is the url of this page,
+which is http://natas2.natas.labs.overthewire.org/ and it find all the things itself
