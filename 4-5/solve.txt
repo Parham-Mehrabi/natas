@@ -1,0 +1,9 @@
+# http://natas4.natas.labs.overthewire.org/
+
+
+checking refs is not a common practice in securing our web app but here we are facing it,
+to access this url from that url u just need to go to natas5 and after skiping the basic authentication,
+then inspect the 403 page(unauthoraized), and add a anchor tag (a tag) to HTML with href to previous level like this:
+
+ <a href="http://natas4.natas.labs.overthewire.org/"> Go to natas4</a>
+
