@@ -1,0 +1,6 @@
+# http://natas6.natas.labs.overthewire.org/
+
+another directory leak, this time in sources how ever we cant list the directories this time but we still have direct access to the file:
+http://natas6.natas.labs.overthewire.org/includes/secret.inc
+the secret is : FOEIUWGHFEEUHOFUOIU;
+
