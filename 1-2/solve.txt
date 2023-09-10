@@ -1,0 +1,4 @@
+http://natas1.natas.labs.overthewire.org/
+
+
+just like natas0 but if you used right click to inspect previous level you need to use your F12 this time
