@@ -1,0 +1,4 @@
+#http://natas0.natas.labs.overthewire.org/
+
+
+you just need to inspect the page and the natas-1's password is commented there
