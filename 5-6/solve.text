@@ -1,0 +1,8 @@
+# http://natas5.natas.labs.overthewire.org/
+
+
+natas5 just use a boolean Cookie to check if user is authenticated,
+we can easly change the value of the cookie to 1 and the site consider us as logged in
+just inspect the page go to cookies and find a cookie named "loggedin" and after changing the value,
+refresh the page
+
