@@ -1,0 +1,16 @@
+# http://natas12.natas.labs.overthewire.org/
+
+this one is super fun there is a ton of ways to solve this one but ill do the easiest one:
+
+just inspect the page and rename the file to .php and instead of an image upload your php file,
+in your php file you can do lots of things for example echo the password of natas13 but im going to use
+one of PHP methods called passthru (that we saw in level 10 and level 11 for grep)
+and create a online terminal for myself
+
+to sum up:
+1. inspect the page and change the hard coded .jpg to .php in the hidden input (input name is 'filename')
+2. either upload my php file or create yourown and upload that
+3.use the link to execute the command that show you the password
+
+
+instead of changing the hardcoded .jpg you can proxy the request with burpsuit and modify the file extension there since this level handle the name on client side
