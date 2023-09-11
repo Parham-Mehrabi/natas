@@ -1,0 +1,10 @@
+# http://natas8.natas.labs.overthewire.org/
+
+
+in this level it encode our input and compare it with a string, which looks like a encoded string,
+
+the problem is the encodedSecret function here is not a proper hash function (like sha256),
+so we can do the reverse and find out which string will return encoded secret
+we can do it with almost any language and even online convertors however PHP has handy methods for this one, but ill solve it with python anyway
+
+
