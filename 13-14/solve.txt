@@ -1,0 +1,10 @@
+# http://natas13.natas.labs.overthewire.org/
+
+just like previous level but this time check the file signature as a validation,
+you can change the signature to 'FF D8 FF EE' which is jpg signature using many methods
+
+the easiest way to do it is to use ghex tool to edit the first bytes and check it with 
+xdd ./your_file | head
+but if you are not in linux and dont have these tools you can use my python script which will do the same
+how ever modified_file already have the signature and you can compare it with upload.php using 
+exiftool or file command
