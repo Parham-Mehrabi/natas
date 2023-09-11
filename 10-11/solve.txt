@@ -1,0 +1,21 @@
+# http://natas10.natas.labs.overthewire.org/
+
+i solved this level in a hard way how ever there is another method which is way easier,
+this level is just like previous one but you cant use semicollon(;), pipe(|) and ampersign(&),
+so you can not chain command here, 
+
+my method:
+if you dont grep something it wont return you anything, so i used $() to use another command,
+ in $() i used awk which is a pattern scanning and text processing language,
+i used an empty password and add every possible charecter to it and try a regex for the /etc/natas/11 and if the regex match, it will return the letter 'e', then i check if the response is like the response you would get when u put the letter 'e' to the input, if the response match too i would append the letter to the start of my password,
+i would do it over and over untill my password.length reach 32 letters
+i did it in my solve.py
+
+
+
+Jadi's method:
+i learnt this method from https://github.com/jadijadi 's youtube channel, since he is an exprienced linux admin and an actual hacker,  he knew the grep command very well, 
+apparently grep has a -r flag which make it recursive (usually -r do the same in commands), and he pass a . which match every thing in grep (just like in regex) and then he pass the password dir and it return all the lines on the direction files (only have premission for natas 10 and 11), in this way you can save a lot of time since the my method take something like 30 mins to complete (based on your internet speed),
+the pharse he put in input was:
+-r . /etc/natas_webpass/*
+ 
