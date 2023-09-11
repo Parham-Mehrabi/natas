@@ -1,0 +1,25 @@
+# http://natas11.natas.labs.overthewire.org/
+
+this one is a little complicated,
+the whole idea is using XOR encryption, XOR uses bits to encrypt data,
+it need a input, a key and will give you an output, its work like it:
+compare 2 bits, if equal return 0 else return 1,
+for example in python you can xor with '^' symbol following XORs return these results :
+
+1 ^ 1 -> 0
+1 ^ 0 -> 1
+1 ^ 2 -> 3      (1 binary is 01, 2 binary is 10 so it compare and return 11 which is 3 in binary)
+
+but the point is if you XOR the result with either of them it will return the other one:
+
+3 ^ 1 -> 2 (binary: 11 xor 01 -> 10)
+3 ^ 2 -> 1 (binary: 11 xor 10 -> 01)
+
+in other word if we have the result of xor and its raw data we can find the key ! ! !
+
+here in this level our Cookie(data) is the result, and the default_data is the raw data XORed in the function when we don't change bg,
+so we can find the censored key in the function (check the source) and then xor our data with it and put in our cookies,
+
+basically we need to xor ( "showpassword"=>"no", "bgcolor"=>"#ffffff") this data with the censored key and replace it with our old Cookie
+
+since im going to use their own function for XOR and other PHP handy methods for this kind of stuff, ill solve this one using PHP
