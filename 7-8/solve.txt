@@ -1,0 +1,11 @@
+# http://natas7.natas.labs.overthewire.org/
+
+when we click about and home page, in URLs we can see a query that looks like its accessing files on the server,
+and if you scan the URL with skipfish, skipfish will find the server's /etc/hosts and /etc/passwd,
+in other hand in the page HTMLs they hint us by telling that they keep levels passwords in /etc/natas_webpass
+
+so we should try to access that with this url:
+http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8
+
+we can catch it with both relative and absolute paths
+
