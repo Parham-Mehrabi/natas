@@ -1,0 +1,9 @@
+# http://natas9.natas.labs.overthewire.org/
+
+this one is prompt injection, according to source page, it put the user's input into a grep command to 
+search the words in dictionary, we can use this opportunity to excute our commands,
+to do so we first end the previous command with ; then do a command then use ; to avoid our cat to concatenate the dictionary.txt
+so the input value should be something like this:
+ ; cat /etc/natas_webpass/natas10 ;
+
+
