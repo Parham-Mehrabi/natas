@@ -1,0 +1,8 @@
+http://natas15.natas.labs.overthewire.org/
+
+
+in this level the page just let us know if query returned something or not and we can use it to brute force the password using LIKE command in sql,
+and we also use BINARY to make the query case sensitive, the % in SQL's LIKE is like the rest of the value,
+in other words 
+LIKE BINARY "A%" 
+means the value start with the letter A
