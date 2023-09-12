@@ -1,0 +1,13 @@
+# http://natas14.natas.labs.overthewire.org/index.php
+
+
+
+the technic we are going to use here called SQL-injection,
+according to source code this level will put our input directly in a sql query without any validation.
+so we can easily put our selves query and comment the reset of the line 
+
+to achieve that you can leave the password blank(doesnt matter since its going to be commented) and put this injection to username field:
+" OR 2>1; #
+
+this injection first close the " which is for username then it add an 'OR' which will fix the condition if have something true next to it then we say 2>1,
+which is clearly true so it will select all users, in the end we finish our query with ; and comment the rest line with #
