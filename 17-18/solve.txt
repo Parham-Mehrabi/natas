@@ -1,0 +1,7 @@
+# http://natas17.natas.labs.overthewire.org/
+
+
+in this level they comment the outputs so basically we have to do a "Blind SQL Injection" which is kinda cool,
+since we have no idea if our query works or not we can add another and and check if it works,
+to do that we use sleep(), then we measure the response time, since my net is too bad i do another check to make sure
+the delay is sleep()'s fault not my internet's, but if you sure about your internet you can remove the double check part

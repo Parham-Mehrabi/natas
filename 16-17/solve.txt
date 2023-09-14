@@ -1,0 +1,8 @@
+# http://natas16.natas.labs.overthewire.org/
+
+in this one they improve the validation and we cant use awk anymore and they put our input inside quotes so we cant add more tags(flags) using dashes '-',
+but we can still use $ and (),
+previously we check if we get something(since we would return e), but now we kinda do the reverse here,
+we grep with regex in password file like ^tmp_pass and if the inner grep match with the password it will return the whole line,
+in that case the outer grep wont match any line in the dictionary so we get nothing and we can add ^tmp_pass to the beginning of our found password
+if you just want to use the script file remember to either update the auth credentials
