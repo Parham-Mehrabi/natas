@@ -1,0 +1,12 @@
+http://natas19.natas.labs.overthewire.org/
+
+
+just like previous one but this time they trying to encrypt the session,
+however there is no view-source but if you go to http://natas19.natas.labs.overthewire.org/index-source.html
+you can still check the source,
+the encode method used in source is called 'Ascii-hex' in python its simple hex(ord('value_string'))
+for example for number 625 we have:
+hex(ord('6')) + hex(ord('2')) + hex(ord('5')), which is:
+'0x36' + '0x32' + '0x35' and the output would be 363235
+i wrote a function which do exactly same thing as they have the same in their source,
+just did the same thing as previous level and password poped up
