@@ -1,5 +1,4 @@
 import requests
-import string
 import re
 
 
@@ -18,8 +17,7 @@ DATA = {
     'username': 'admin',
     'password': 'parham'
 }
-LETTERS = string.ascii_letters + string.digits
-LETTERS = string.digits + string.ascii_letters
+
 
 for i in range(0, 650):
     phpsessid = bin2hex_php(f'{i}-admin')

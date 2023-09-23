@@ -1,0 +1,14 @@
+# http://natas20.natas.labs.overthewire.org/
+
+
+if you intruder attack this page with burp suit,
+you will realize the response would have an error when you send 0A which is equal to new line in ascii table,
+and apparently(i wasn't able to figure it out but search it through the web and youtube), the read function here,
+split the input from -1 index when the write use the first line,
+in this case we can send the input which create a random and then read admin session,
+in burp you can use test "%0A admin 1" in python you can use \n instead and repeat the request with previous session,
+which is admin session
+
+for more information you can read:
+https://github.com/psmiraglia/ctf/blob/master/overthewire/natas/natas20.md
+https://giuscri.medium.com/natas20-overthewire-org-76df23b67bca
