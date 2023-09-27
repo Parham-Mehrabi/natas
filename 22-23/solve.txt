@@ -1,0 +1,7 @@
+# http://natas23.natas.labs.overthewire.org/
+
+
+one of the easiest, i solve it in first try, apparently it reveal the password when you have revelio in your GET parameters,
+and if you are not admin it will redirect you before you can see the password,
+there is more than 2345678987654323456789 ways to solve this level but i used python3,
+just request the page and don't let redirect with allow_redirects=False
