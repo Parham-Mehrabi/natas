@@ -1,0 +1,9 @@
+# http://natas21.natas.labs.overthewire.org/
+
+this one is the most unreal one yet, the first page dont have something for us just tell us "this website is colocated with . . ."
+in the second page at first i though we should try to some inject in inputs but the problem was in the first function,
+it check if submit is exist in the GET parameters, it store all the get params to session (using foreach),
+so we simply need to delete our session cookie in the second page, then add ?submit=something&admin=1 after our url in browser,
+then refresh the page and copy the new session cookie, then go back to first page and replace the old cookie with the one you copied,
+refresh the page and you have admin credentials,
+you can do it using burpsuit or script too but its unnecessary, how ever ill provide the code

