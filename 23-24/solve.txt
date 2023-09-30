@@ -1,0 +1,19 @@
+# http://natas23.natas.labs.overthewire.org/
+
+since im not a PHP developer this one tricked me really hard,
+when i was checking the condition on my machine it always return true
+my problem was the part that compare a string to a number,
+in my machine php 8.2.7 is installed (the last version for debian 12 stable),
+and i tried anything and it always returned me true,
+since i asked chatgpt(free version for before 2021 world), about how PHP compare,
+and apparently it handle string vs integer compression like this:
+"if there is a number in the beginning of the string count the string as the number",
+ which make it clear how to solve the level but my question is still on the table
+but obviously it wasnt work like that on my machine so i used online interpreter and still had the problem,
+but on this site: https://onlinephp.io/
+i was able to change the php and i realized the change it on version 8
+when you test it on 7.4.32 it deal with it just as chatgpt described,
+anyway this site is old and apparently they didn't update their PHP,
+
+you just need to add a number higher than 10 in the beginning of the string like this 99iloveyou, thats all
+
