@@ -1,0 +1,12 @@
+# http://natas25.natas.labs.overthewire.org/
+
+in this level we are facing strcmp function in PHP,
+this function compare an string to another one character by character based on ASCII table until it find a difference,
+so for example if first character be A(which is 65 in ascii table) and the other one be B(which is 66 in ascii table), its stop there and return -1,
+so according to this source code we need to put an string that when it compare it to the censored string, it returns 0 until the last character,
+which means brute forcing the whole thing,
+however its clearly is not an easy task so we just need to send something else than a string so the function crashes and we get into the if block,
+we can send an array using burpsuit or just use my python script which do the same,
+keep it in mind if you want to send an array using GET params, u need to specify the parameter name with an [] so that means its not a string but an array
+like this => http://url?passwd[]=[my, array, or, even, not, an, array]
+ 
