@@ -1,0 +1,11 @@
+# http://natas26.natas.labs.overthewire.org/
+
+my php knowledge is too limited and i have no clue how to solve this level
+
+but apparently there is a vulnerability in php serialize and the  __destruct method in classes,
+im not interested in PHP but if you want to know about this level more,
+check :
+https://owasp.org/www-community/vulnerabilities/PHP_Object_Injection
+which is PHP object injection on owasp
+
+since its too much PHP i wont try to solve rest of it for now
