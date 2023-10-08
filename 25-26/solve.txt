@@ -1,0 +1,56 @@
+# http://natas25.natas.labs.overthewire.org
+
+this one was the hardest one so far,
+
+the problem of this source is where it delete ../ manually in the source code,
+imagine a site has a mechanism like this to prevent XSS,
+and they remove <script> like how this level deletes ../
+the only thing you should do is instead of using
+<script>,
+use <scr<script>ipt>
+then after deleting <script> from it, we create a new <script>,
+here they delete ../
+so we can modify our path like this:
+../etc => ..././etc then after deleting the ../, we have a new ../,
+because the function is not recursive and it dont replace it with something and just delete illigal part,
+so to access our desired directory we need to use ....// instead of ../,
+it doesnt matter if you use ....// or ..././ or something like that,
+as long as there is one ../ in it and after removing ../ you have a new ../,
+it will work.
+
+however when we gonna access /etc/natas_webpass/ it dont remove the illigal part,
+the function dont return anything in that case, so we cant use it to access natas_webpass directly,
+
+the other clue we have is their log directory which is in ../log,
+we can access that with ....//trick with this url:
+http://natas25.natas.labs.overthewire.org?lang=....//logs/natas25_{"PHPSESSID"}.log
+where you should replace {"PHPSESID"} with your phpsesid,
+but accessing logs is not enough ! ! !
+
+the other problem this page has is when its logging,
+its use $_SERVER['HTTP_USER_AGENT'] without any validation and put it in the logs,
+later we can use our trick to load the log file in PHP,
+so we should modify our User-Agent header and write some php to run there
+
+in other word we should do this:
+1. make a request that will logged
+2. in that request modify our User-Agent
+3. read the logs
+
+
+for the first step we just need to use ....// trick since its a directory traversal attempt(since its include ../),
+it will log it for use
+
+then we should modify this request header with our PHP code,
+we can either use burp suit or python
+
+then in our header for User-Agent we put our PHP code:
+{'User-Agent': '<?php passthru("cat /etc/natas_webpass/natas26"); ?>'}
+in this piece of code i used passthru that we used in previous levels,
+its run a os command then print the output
+
+then  we need to check the logs and see the natas26 password instead of our userAgent in logs
+
+
+i did all these steps in my python script, however you can use burp for this level,
+i didnt use python to figure it out either
